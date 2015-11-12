@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :trainings do
     resources :exercises
   end
+
+  resources :nutritions
   
   root 'trainings#index'
   # The priority is based upon order of creation: first created -> highest priority.

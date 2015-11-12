@@ -1,0 +1,10 @@
+<%= simple_form_for(@nutrition, html: { class: 'form-vertical' }) do |f| %>
+  <%= f.input :name%>
+  <%= f.input :sets%>
+  <%= f.input :reps%>
+  <br>
+
+  <%= f.button :submit%>
+<% end %>
+
+<%= link_to "Cancel", root_path %>
