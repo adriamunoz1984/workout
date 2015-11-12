@@ -1,0 +1,11 @@
+<%= simple_form_for(@training, html: { class: 'form-vertical' }) do |t| %>
+  <%= t.input :date, label: "Date" %>
+  <%= t.input :workout, label: "Type of workout performed" %>
+  <%= t.input :energy, label: "How pumped were you?" %>
+  <%= t.input :length, label: "Duration of your workout" %>
+  <%= t.input :notes, label: "Any notes to add" %>
+
+<br>
+
+<%= t.button :submit %>
+<% end %>

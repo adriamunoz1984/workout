@@ -1,0 +1,18 @@
+<h2><p><%= @training.workout %></p></h2>
+    <p><%= @training.date.strftime("%A %B, %d") %></p>
+    <h4>Energy Level</h4>
+    <p><%= @training.energy %></p>
+    <h4>Workout Duration</h4>
+    <p><%= @training.length %></p>
+    <h4>Personal notes</h4>
+    <p><%= @training.notes %></p>
+
+  <h3>Exercises</h3>
+  <%= render @training.exercises %>
+
+  <h4>Add an exercise</h4>
+  <%= render "exercises/form" %>
+
+<%= link_to "Back", root_path %> |
+<%= link_to "Edit", edit_training_path(@training) %> |
+<%= link_to "Delete", training_path(@training), method: :delete, data: {confirm: "Are you sure?"}%>
