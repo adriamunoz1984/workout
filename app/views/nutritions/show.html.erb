@@ -1,9 +1,9 @@
 <h2><p><%= @nutrition.name %></p></h2>
     <p><%= @nutrition.date.strftime("%A %B, %d") %></p>
     
-    
+  <br>
   <%= render @nutrition.meals %>
-
+  <br>
   
   <%= render "meals/form" %>
 

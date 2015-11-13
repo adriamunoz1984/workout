@@ -1,29 +1,30 @@
 <%= simple_form_for([@nutrition, @nutrition.meals.build]) do |f| %> 
 <small>Macro nutriets in grams (g)</small>
+<br>
+<small><em>add time here later</em></small>
+  <h4><strong>Type of Meal</strong><small> (Breakfast, lunch etc...)</small></h4>
+  <h4><%= f.input :feast, label: false %></h4>
 
-  <h3>Date</h3>
-  <%= f.input :date%>
+  <h4><%= f.input :name%></h4>
+  
+  <h4><%= f.input :protein%> g</h4>
+  
 
-  <h3>Meal type</h3>
-  <%= f.input :name%>
+  <h4><%= f.input :carbohydrates%> g</h4>
+  
 
-  <h3>Protein</h3>
-  <%= f.input :protein%> g
+  <h4><%= f.input :fat%> g</h4>
+  
 
-  <h3>Carbohydrates</h3>
-  <%= f.input :carbohydrates%> g
+  <h4><%= f.input :calories%> cal</h4>
+  
 
-  <h3>Fat</h3>
-  <%= f.input :fat%> g
-
-  <h3>Calories</h3>
-  <%= f.input :calories%> cal
-
-  <h3>Notes</h3>
-  <%= f.input :notes%>
+  <h4><%= f.input :notes%></h4>
+  
   <br>
 
   <%= f.button :submit%>
   <% end %>
+  <br>
 
 <%= link_to "Cancel", root_path %>
