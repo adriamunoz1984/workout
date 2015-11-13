@@ -13,6 +13,6 @@
   <h4>Add an exercise</h4>
   <%= render "exercises/form" %>
 
-<%= link_to "Back", root_path %> |
+<%= link_to "Back", trainings_path %> |
 <%= link_to "Edit", edit_training_path(@training) %> |
 <%= link_to "Delete", training_path(@training), method: :delete, data: {confirm: "Are you sure?"}%>

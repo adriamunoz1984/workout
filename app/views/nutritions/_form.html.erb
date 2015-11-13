@@ -1,13 +1,14 @@
 <%= simple_form_for(@nutrition, html: { class: 'form-vertical' }) do |f| %>
+<small>Macro nutriets in grams (g)</small>
+
+  <h3>Date</h3>
+  <%= f.input :date%>
+  <h3>Meal type</h3>
   <%= f.input :name%>
-  <%= f.input :protein%>
-  <%= f.input :carbohydrates%>
-  <%= f.input :fat%>
-  <%= f.input :calories%>
-  <%= f.input :notes%>
+
   <br>
 
   <%= f.button :submit%>
-<% end %>
+  <% end %>
 
 <%= link_to "Cancel", root_path %>

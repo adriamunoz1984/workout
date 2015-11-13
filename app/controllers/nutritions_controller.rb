@@ -2,7 +2,7 @@ class NutritionsController < ApplicationController
   before_action :find_nutrition, only: [:show, :edit, :update, :destroy]
 
   def index
-    @nutrition = Nutrition.all.order("created_at DESC")
+    @nutritions = Nutrition.all.order("created_at DESC")
   end
 
   def show
@@ -13,15 +13,25 @@ class NutritionsController < ApplicationController
   end
 
   def create
+    @nutrition = Nutrition.new(nutrition_params)
+    if @nutrition.save
+      redirect_to @nutrition
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def update
+    @nutrition = Nutrition.update(nutrition_params)
+    redirect_to @nutrition
   end
 
   def destroy
+    @nutrition.destroy
+    redirect_to root_path
   end
 
   private
@@ -31,7 +41,7 @@ class NutritionsController < ApplicationController
   end
 
   def nutrition_params
-    params.require(:nutrition).permit(:name, :protein, :carbohydrates, :fat, :calories, :notes)
+    params.require(:nutrition).permit(:name, :date)
   end
 
 
