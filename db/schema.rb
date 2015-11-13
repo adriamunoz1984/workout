@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151113063511) do
   add_index "exercises", ["training_id"], name: "index_exercises_on_training_id"
 
   create_table "meals", force: :cascade do |t|
+    t.string   "type"
     t.string   "name"
     t.integer  "protein"
     t.integer  "carbohydrates"

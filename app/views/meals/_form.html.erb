@@ -1,8 +1,9 @@
-<%= simple_form_for(@meal, html: { class: 'form-vertical' }) do |f| %>
+<%= simple_form_for([@nutrition, @nutrition.meals.build]) do |f| %> 
 <small>Macro nutriets in grams (g)</small>
 
   <h3>Date</h3>
   <%= f.input :date%>
+
   <h3>Meal type</h3>
   <%= f.input :name%>
 

@@ -1,6 +1,11 @@
 <h2><p><%= @nutrition.name %></p></h2>
     <p><%= @nutrition.date.strftime("%A %B, %d") %></p>
     
+    
+  <%= render @nutrition.meals %>
+
+  
+  <%= render "meals/form" %>
 
 <%= link_to "Back", nutritions_path %> |
 <%= link_to "Edit", edit_nutrition_path(@nutrition) %> |
