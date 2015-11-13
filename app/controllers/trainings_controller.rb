@@ -41,7 +41,7 @@ class TrainingsController < ApplicationController
   end
 
   def training_params
-    params.require(:training).permit(:workout, :date, :energy, :length)
+    params.require(:training).permit(:workout, :date, :energy, :length, :notes)
   end
 
 end

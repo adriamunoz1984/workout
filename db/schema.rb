@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20151112183632) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
+    t.integer  "weight"
     t.integer  "sets"
     t.integer  "reps"
     t.integer  "training_id"

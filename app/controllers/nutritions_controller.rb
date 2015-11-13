@@ -1,5 +1,5 @@
 class NutritionsController < ApplicationController
-  before_action find_nutrition:, only: [:show, :edit, :update, :destroy]
+  before_action :find_nutrition, only: [:show, :edit, :update, :destroy]
 
   def index
     @nutrition = Nutrition.all.order("created_at DESC")
@@ -31,7 +31,7 @@ class NutritionsController < ApplicationController
   end
 
   def nutrition_params
-    params.require(:nutrition).permit()
+    params.require(:nutrition).permit(:name, :protein, :carbohydrates, :fat, :calories, :notes)
   end
 
 

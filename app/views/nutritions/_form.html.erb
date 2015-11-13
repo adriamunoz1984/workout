@@ -1,7 +1,10 @@
 <%= simple_form_for(@nutrition, html: { class: 'form-vertical' }) do |f| %>
   <%= f.input :name%>
-  <%= f.input :sets%>
-  <%= f.input :reps%>
+  <%= f.input :protein%>
+  <%= f.input :carbohydrates%>
+  <%= f.input :fat%>
+  <%= f.input :calories%>
+  <%= f.input :notes%>
   <br>
 
   <%= f.button :submit%>
