@@ -11,13 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113063511) do
+ActiveRecord::Schema.define(version: 20151118050352) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
-    t.integer  "weight"
-    t.integer  "sets"
-    t.integer  "reps"
     t.integer  "training_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -48,6 +45,16 @@ ActiveRecord::Schema.define(version: 20151113063511) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reps", force: :cascade do |t|
+    t.integer  "weight"
+    t.integer  "numreps"
+    t.integer  "wosets_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reps", ["wosets_id"], name: "index_reps_on_wosets_id"
+
   create_table "trainings", force: :cascade do |t|
     t.string   "workout"
     t.datetime "date"
@@ -57,5 +64,14 @@ ActiveRecord::Schema.define(version: 20151113063511) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "wosets", force: :cascade do |t|
+    t.integer  "numsets"
+    t.integer  "exercises_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "wosets", ["exercises_id"], name: "index_wosets_on_exercises_id"
 
 end

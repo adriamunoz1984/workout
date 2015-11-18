@@ -1,0 +1,2 @@
+class WosetsController < ApplicationController
+end

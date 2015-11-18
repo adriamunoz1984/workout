@@ -1,0 +1,37 @@
+ Prefix Verb                        URI Pattern     Controller#Action
+    training_exercise_woset_reps    GET                reps#index
+                               
+ new_training_exercise_woset_rep    GET                reps#new
+edit_training_exercise_woset_rep    GET                reps#edit
+     training_exercise_woset_rep    GET                reps#show
+                             
+        training_exercise_wosets    GET                wosets#index
+                                 
+     new_training_exercise_woset    GET                wosets#new
+    edit_training_exercise_woset    GET                wosets#edit
+         training_exercise_woset    GET                wosets#show
+                                
+              training_exercises    GET                exercises#index
+                             
+           new_training_exercise    GET                exercises#new
+          edit_training_exercise    GET                exercises#edit
+               training_exercise    GET                exercises#show
+                                 
+                                 
+                    new_training    GET                trainings#new
+                   edit_training    GET                trainings#edit
+                        training    GET                trainings#show
+                                
+                 nutrition_meals    GET                meals#index
+                                
+              new_nutrition_meal    GET                meals#new
+             edit_nutrition_meal    GET                meals#edit
+                  nutrition_meal    GET                meals#show
+                                
+                      nutritions    GET                nutritions#index
+                                 
+                   new_nutrition    GET                nutritions#new
+                  edit_nutrition    GET                nutritions#edit
+                       nutrition    GET                nutritions#show
+                                
+                            root    GET                welcome#index

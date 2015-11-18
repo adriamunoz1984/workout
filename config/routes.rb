@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :trainings do
-    resources :exercises
+    resources :exercises do
+      resources :wosets do
+        resources :reps
+      end
+    end
   end
 
   resources :nutritions do

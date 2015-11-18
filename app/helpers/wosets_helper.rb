@@ -1,0 +1,2 @@
+module WosetsHelper
+end
