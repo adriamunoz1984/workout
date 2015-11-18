@@ -1,9 +1,13 @@
 <%= simple_form_for([@training, @training.exercises.build]) do |f| %>
   <%= f.input :name%>
-  <%= f.input :weight%>
-  <%= f.input :sets%>
-  <%= f.input :reps%>
-  <br>
+  
+
+  <% @set = f.input :sets %>
+  <% while @set > 1 do%>
+    <%= f.input :weight%>
+    <%= f.input :reps%>
+    <br>
+  <% end %>
 
   <%= f.button :submit%>
 <% end %>
