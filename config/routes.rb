@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :trainings do
-    resources :exercises
-  end
-
+  resources :trainings 
   resources :nutritions do
     resources :meals
   end

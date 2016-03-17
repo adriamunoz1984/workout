@@ -17,3 +17,9 @@
 <h4>Calories</h4>
 <p><%= meal.calories %>cal</p>
 <br><br>
+
+<h3>total protein 
+<% @meal.each do |m|  %>
+  <%= m.protein %>
+<%end%>
+</h3>

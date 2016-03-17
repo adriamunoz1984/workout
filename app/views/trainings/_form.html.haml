@@ -1,0 +1,15 @@
+= simple_form_for @training, html: {multipart: true} do |f|
+  - if @training.errors.any?
+    #errors
+      %p
+        = @training.errors.count
+        Prevented this Workout from saving
+      %ul
+        - @training.errors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    = f.input :date, input_html: {class: 'form-control'}
+    = f.input :type, input_html: {class: 'form-control'}
+    = f.input :description, input_html: {class: 'form-control'}
+
+  = f.button :submit, class: "btn btn-primary"

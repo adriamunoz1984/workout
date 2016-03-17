@@ -1,8 +1,0 @@
-<h1>Workout Index</h1>
-<% @trainings.each do |t| %>
-  <%= link_to t.date.strftime("%A %B, %d"), t %>
-  <%= t.workout %>
-  <br>
-<% end %>
-
-<%= link_to 'New', new_training_path %>

@@ -1,47 +1,33 @@
 class TrainingsController < ApplicationController
-  before_action :find_training , only: [:show, :edit, :update, :destroy] 
-
+  before_action :find_trainings, only: [:show, :edit, :update, :destroy]
   def index
-    @trainings = Training.all.order("created_at DESC")
+    @trainings = Training.all
   end
 
   def show
-  end 
+  end
 
   def new
     @training = Training.new
   end
 
   def create
-    @training = Training.new(training_params)
+    @training = Training.new(trainings_params)
+
     if @training.save
-      redirect_to @training
+      redirect_to @training, notice: "Succesfully created new Workout"
     else
       render 'new'
     end
   end
 
-  def update
-    @training.update(training_params)
-    redirect_to @training
+private
+
+  def trainings_params
+    params.require(:trainings).permit(:date, :type, :description)
   end
 
-  def edit
-  end
-
-  def destroy
-    @training.destroy
-    redirect_to root_path
-  end
-
-  private
-
-  def find_training
+  def find_trainings
     @training = Training.find(params[:id])
   end
-
-  def training_params
-    params.require(:training).permit(:workout, :date, :energy, :length, :notes)
-  end
-
 end
