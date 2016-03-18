@@ -1,7 +1,7 @@
 class TrainingsController < ApplicationController
   before_action :find_trainings, only: [:show, :edit, :update, :destroy]
   def index
-    @trainings = Training.all
+    @trainings = Training.all.order("created_at DESC")
   end
 
   def show
@@ -21,6 +21,22 @@ class TrainingsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @training.update(trainings_params)
+      redirect_to @training
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @training.destroy
+        redirect_to trainings_path, notice: "Succesfully Deleted Workout"
+  end
+
 private
 
   def find_trainings
@@ -28,6 +44,6 @@ private
   end
 
    def trainings_params
-    params.require(:trainings).permit(:date, :type, :description)
+    params.require(:training).permit(:date, :name, :description)
   end
 end

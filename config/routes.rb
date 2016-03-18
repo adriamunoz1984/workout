@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :trainings 
+  devise_for :users
+  
+  resources :trainings do
+    resources :exercises
+  end
+
   resources :nutritions do
     resources :meals
   end

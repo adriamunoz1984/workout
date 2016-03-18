@@ -1,0 +1,13 @@
+<h1> Training page</h1>
+
+<p>
+  <%= link_to "New Workout", new_training_path %>
+  </br>
+    <% @trainings.each do |f| %>
+  </br>
+    <%= link_to f.date, f %>
+  </br>
+    <small><%= f.name %></small>
+    
+  <% end %>
+</p>
