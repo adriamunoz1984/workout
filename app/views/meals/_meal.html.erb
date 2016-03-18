@@ -1,0 +1,25 @@
+
+
+<h3><strong><%= meal.feast %></strong></h3>
+
+<h4>Name</h4>
+<p><%= meal.name %></p>
+
+<h4>Protein</h4>
+<p><%= meal.protein %>g</p>
+
+<h4>Carbohydrates</h4>
+<p><%= meal.carbohydrates %>g</p>
+
+<h4>Fat</h4>
+<p><%= meal.fat %>g</p>
+
+<h4>Calories</h4>
+<p><%= meal.calories %>cal</p>
+<br><br>
+
+<h3>total protein 
+<% @meal.each do |m|  %>
+  <%= m.protein %>
+<%end%>
+</h3>

@@ -1,0 +1,12 @@
+<h1>Meals Index</h1>
+<% @nutritions.each do |t| %>
+  <%= link_to t.date.strftime("%A %B, %d"),t %>
+  <small><i><%= t.name %></i></small>
+  <br>
+<% end %>
+
+<h5>Total Protein | Total Carbs | Total Fat | Total Calories</h5>
+      
+
+
+<%= link_to 'New', new_nutrition_path %>

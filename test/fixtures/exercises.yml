@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  sets: 1
-  reps: 1
+  notes: MyText
+  training_id: 
 
 two:
   name: MyString
-  sets: 1
-  reps: 1
+  notes: MyText
+  training_id: 
