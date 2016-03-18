@@ -1,0 +1,15 @@
+<%= simple_form_for(@nutrition, html: { class: 'form-vertical' }) do |f| %>
+<div class="container">
+
+  <h3>Date</h3>
+  <%= f.input :date%>
+  <h3>Name <small><i>Optional</i></small></h3>
+  <%= f.input :name%>
+
+  <br>
+
+  <%= f.button :submit, class: 'btn btn-success'%>
+  <% end %>
+
+<%= link_to "Cancel", root_path, class: 'btn btn-danger' %>
+</div>

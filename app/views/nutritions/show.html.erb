@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><p><%= @nutrition.name %></p></h2>
+      <p><%= @nutrition.date.strftime("%A %B, %d") %></p>
+      
+    <br>
+    <%= render @nutrition.meals %>
+    <br>
+    
+    <%= render "meals/form" %>
+
+  <%= link_to "Back", nutritions_path %> |
+  <%= link_to "Edit", edit_nutrition_path(@nutrition) %> |
+  <%= link_to "Delete", nutrition_path(@nutrition), method: :delete, data: {confirm: "Are you sure?"}%>
+</div>
