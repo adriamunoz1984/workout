@@ -23,11 +23,11 @@ class TrainingsController < ApplicationController
 
 private
 
-  def trainings_params
-    params.require(:trainings).permit(:date, :type, :description)
-  end
-
   def find_trainings
     @training = Training.find(params[:id])
+  end
+
+   def trainings_params
+    params.require(:trainings).permit(:date, :type, :description)
   end
 end
