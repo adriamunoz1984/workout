@@ -5,4 +5,5 @@ class Exercise < ActiveRecord::Base
   accepts_nested_attributes_for :wosets,
   								reject_if: proc {|attributes| attributes['weight','reps'].blank?},
   								allow_destroy: true
+ validates :weight, :reps, presence: true
 end

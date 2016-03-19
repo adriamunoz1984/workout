@@ -1,1 +1,18 @@
-<h1>Im an exercises form!!</h1>
+<%= simple_form_for @exercise, html: {multipart: true} do |f| %>
+  <% if @exercise.errors.any? %>
+    #errors
+      <p>
+        <%= @exercise.errors.count %>
+        Prevented this Workout from saving
+      <ul>
+        <% @exercise.errors.full_messages.each do |msg| %>
+          <li><%= msg %>
+        <% end %> 
+      </ul>
+  <div class="panel-body">
+    <%= f.input :date, input_html: {class: 'form-control'} %>
+    <%= f.input :name, input_html: {class: 'form-control'} %>
+    <%= f.input :description, input_html: {class: 'form-control'} %>
+
+  <%= f.button :submit, class: "btn btn-primary"%>
+  <% end %>

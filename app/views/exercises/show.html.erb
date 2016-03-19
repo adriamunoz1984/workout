@@ -1,0 +1,9 @@
+<h1><%= @exercise.date %>
+<p><%= @exercise.name%>
+<p><%= @exercise.description %> 
+
+</br>
+
+<%= link_to "Back", trainings_path, class: "btn btn-default"%>
+<%= link_to "Edit", edit_exercise_path, class: "btn btn-default"%>
+<%= link_to "Delete", exercise_path, method: :delete, data:{confirm: "Are you sure"}, class: "btn btn-default"%>
